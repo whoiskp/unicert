@@ -38228,14 +38228,14 @@ var IssuerComponent = /** @class */ (function () {
         this.fileName = 'SheetJS.xlsx';
         this.issuerInfo = {
             "id": "f484a3b4239345329da836ad80248e71",
-            "logo": "/assets/images/logo-ptit.png",
+            "logo": "./assets/images/logo-ptit.png",
             "name": "PTIT HCM",
             "url": "http://portal.ptit.edu.vn/",
             "email": "ptithcm@edu.vn"
         };
         this.issuerSign = {
             "jobTitle": "Director",
-            "image": "/assets/images/mr-wonderful.jpg",
+            "image": "./assets/images/mr-wonderful.jpg",
             "name": "Mr Wonderful"
         };
         // pager object
@@ -38395,7 +38395,7 @@ var IssuerComponent = /** @class */ (function () {
 /***/ "./src/app/pages/unicert/recipient/recipient.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\">\n  <div class=\"card-header\">List cert recieved</div>\n  <div class=\"card-body\">\n    <table class=\"table bg-success\">\n      <thead>\n        <tr>\n          <th>#</th>\n          <th>Cert ID</th>\n          <th>Name Cert</th>\n          <th>Issue By</th>\n          <th>Image QR Code</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>1</td>\n          <td>aksdfhkajsdfhjkasdf linnk</td>\n          <td>Chung Chi ABC</td>\n          <td>HHVBCVT</td>\n          <td></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card\">\n  <div class=\"card-header\">List cert recieved</div>\n  <div class=\"card-body\">\n    <table class=\"table bg-success\">\n      <thead>\n        <tr>\n          <th>#</th>\n          <th>Cert ID</th>\n          <th>Name Cert</th>\n          <th>Issue By</th>\n          <th>Image QR Code</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>1</td>\n          <td>aksdfhkajsdfhjkasdf linnk</td>\n          <td>Chung Chi ABC</td>\n          <td>HHVBCVT</td>\n          <td></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n<div class=\"card\">\n  <div class=\"card-header\">List batch cert Issued</div>\n  <div class=\"card-body\">\n    <table class=\"table bg-success\">\n      <thead>\n        <tr>\n          <th>#</th>\n          <th>TxID</th>\n          <th>Name Cert Batch</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>1</td>\n          <td>aksdfhkajsdfhjkasdf linnk</td>\n          <td>Chung Chi ABC</td>\n          <td></td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n</div>\n"
 
 /***/ }),
 
