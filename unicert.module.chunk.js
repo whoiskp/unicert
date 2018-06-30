@@ -38343,8 +38343,7 @@ var IssuerComponent = /** @class */ (function () {
         this.allItems.splice(position, 1);
         __WEBPACK_IMPORTED_MODULE_1_sweetalert2___default()({
             type: 'success',
-            title: 'Chúc mừng!',
-            html: "\n      <h1 style=\"color: red\">" + this.rand[1] + "</h1>\n      <h3>" + this.rand[2] + "</h3>\n      <i>" + this.rand[3] + "</i>\n      "
+            title: 'This Certificate is valid!'
         });
         var totalPages = Math.ceil(this.allItems.length / 5);
         var current = this.pager.currentPage > totalPages ? totalPages : this.pager.currentPage;
@@ -38488,7 +38487,7 @@ var RecipientComponent = /** @class */ (function () {
 /***/ "./src/app/pages/unicert/unicert.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mt-3\">\n  <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <a class=\"navbar-brand\" href=\"#/pages/unicert\">UniCert</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\"\n      aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#/pages/unicert/recipient\">Recipient\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#/pages/unicert/issuer\">Issuer</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#/pages/unicert/verify\">Verifier</a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"#/pages/unicert/cert-info\">Cert Info</a>\n        </li> \n      </ul>\n    </div>\n  </nav>\n  <router-outlet></router-outlet>\n</div>\n"
+module.exports = "<div class=\"mt-3\">\n  <nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n    <a class=\"navbar-brand\" href=\"{{ defaultLink }}\">UniCert</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\"\n      aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\" *ngFor=\"let route of routes\">\n          <a class=\"nav-link\" href=\"{{route.link}}\">{{ route.name}}\n          </a>\n        </li>\n      </ul>\n    </div>\n  </nav>\n  <router-outlet></router-outlet>\n</div>\n"
 
 /***/ }),
 
@@ -38517,6 +38516,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var UnicertComponent = /** @class */ (function () {
     function UnicertComponent() {
+        this.defaultLink = "unicert/#/pages/unicert/";
+        this.routes = [];
+        this.routes = [
+            { "name": "Recipient", "link": this.defaultLink + "recipient" },
+            { "name": "Issuer", "link": this.defaultLink + "issuer" },
+            { "name": "Verifier", "link": this.defaultLink + "verify" },
+            { "name": "Cert Info", "link": this.defaultLink + "cert-info" }
+        ];
     }
     UnicertComponent.prototype.ngOnInit = function () {
     };
