@@ -229,7 +229,7 @@ var NotFoundComponent = /** @class */ (function () {
 /***/ "./src/app/pages/pages.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"btn btn-primary\" href=\"/#/pages/unicert\" role=\"button\">UniCert</a>\n<a class=\"btn btn-danger\" href=\"/#/pages/unicoin\" role=\"button\">UniCoin</a>\n<router-outlet></router-outlet>\n"
+module.exports = "<a class=\"btn btn-primary\" href=\"#/pages/unicert\" role=\"button\">UniCert</a>\n<a class=\"btn btn-danger\" href=\"#/pages/unicoin\" role=\"button\">UniCoin</a>\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
