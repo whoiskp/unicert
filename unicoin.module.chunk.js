@@ -427,7 +427,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var UnicoinComponent = /** @class */ (function () {
     function UnicoinComponent() {
-        this.defaultLink = "unicert/#/pages/unicoin/";
+        this.defaultLink = "#/pages/unicoin/";
         this.routes = [];
         this.routes = [
             { "name": "address", "link": this.defaultLink + "address" },

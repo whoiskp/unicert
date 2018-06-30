@@ -38516,7 +38516,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var UnicertComponent = /** @class */ (function () {
     function UnicertComponent() {
-        this.defaultLink = "unicert/#/pages/unicert/";
+        this.defaultLink = "#/pages/unicert/";
         this.routes = [];
         this.routes = [
             { "name": "Recipient", "link": this.defaultLink + "recipient" },
