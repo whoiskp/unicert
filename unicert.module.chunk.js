@@ -38136,7 +38136,7 @@ var XLS = XLSX, ODS = XLSX;
 /***/ "./src/app/pages/unicert/cert-info/cert-info.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card\">\n  <div class=\"card-header\">Issuer Information</div>\n  <div class=\"card-body\">\n    <form>\n      <div class=\"form-group row\">\n        <label class=\"col-sm-2 col-form-label\">ID / PubKey</label>\n        <div class=\"col-sm-10\">\n          <strong class=\"form-control-plaintext\">f484a3b4239345329da836ad80248e71</strong>\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-sm-2 col-form-label\">Logo</label>\n        <div class=\"col-sm-10\">\n          <img src=\"/assets/images/logo-ptit.png\" alt=\"logo ptit\" class=\"img-thumbnail\">\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-sm-2 col-form-label\">Name</label>\n        <div class=\"col-sm-10\">\n          <input type=\"text\" readonly class=\"form-control-plaintext\" value=\"PTIT HCM\">\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-sm-2 col-form-label\">Url</label>\n        <div class=\"col-sm-10\">\n          <a href=\"http://portal.ptit.edu.vn/\">http://portal.ptit.edu.vn/</a>\n        </div>\n      </div>\n      <div class=\"form-group row\">\n        <label class=\"col-sm-2 col-form-label\">Email</label>\n        <div class=\"col-sm-10\">\n          <input type=\"text\" readonly class=\"form-control-plaintext\" value=\"ptithcm@edu.vn\">\n        </div>\n      </div>\n\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"card\">\n  <div class=\"card-header font-weight-bold\">Cert Information</div>\n  <div class=\"card-body\">\n    <ul class=\"list-group\">\n      <li class=\"list-group-item\">Cert ID:\n        <strong>{{ certInfo.badge.id }}</strong>\n      </li>\n      <li class=\"list-group-item\">Certificate Name:\n        <strong>{{ certInfo.badge.name}}</strong>\n      </li>\n      <li class=\"list-group-item\">Issued on:\n        <strong>{{ certInfo.issuedOn | date }}</strong>\n      </li>\n    </ul>\n    <div id=\"accordion\">\n      <div class=\"card\">\n        <div class=\"card-header\" id=\"headingOne\">\n          <h5 class=\"mb-0\">\n            <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseOne\" aria-expanded=\"true\" aria-controls=\"collapseOne\">\n              Issuer Information\n            </button>\n          </h5>\n        </div>\n\n        <div id=\"collapseOne\" class=\"collapse show\" aria-labelledby=\"headingOne\" data-parent=\"#accordion\">\n          <div class=\"card-body\">\n            <ul class=\"list-group\">\n              <li class=\"list-group-item\">Name: {{ certInfo.badge.issuer.name }}</li>\n              <li class=\"list-group-item\">Url:\n                <a href=\"#\">{{ certInfo.badge.issuer.url }}</a>\n              </li>\n              <li class=\"list-group-item\">Email: {{ certInfo.badge.issuer.email }}</li>\n              <li class=\"list-group-item\">Logo:\n                <img src=\"{{ certInfo.badge.issuer.image }}\" alt=\"logo ptit\" class=\"img-thumbnail\">\n              </li>\n              <li class=\"list-group-item\">pubkey: {{ certInfo.badge.issuer.id }}</li>\n            </ul>\n          </div>\n        </div>\n      </div>\n      <div class=\"card\">\n        <div class=\"card-header\" id=\"headingZero\">\n          <h5 class=\"mb-0\">\n            <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseZero\" aria-expanded=\"true\" aria-controls=\"collapseZero\">\n              Main Content\n            </button>\n          </h5>\n        </div>\n\n        <div id=\"collapseZero\" class=\"collapse show\" aria-labelledby=\"headingZero\" data-parent=\"#accordion\">\n          <div class=\"card-body\">\n            <ul class=\"list-group\">\n              <li class=\"list-group-item\">ID Recipient:\n                <strong>{{ certInfo.recipient.id }}</strong>\n              </li>\n              <li class=\"list-group-item\">Issue For:\n                <strong>{{ certInfo.recipient.name }}</strong>\n              </li>\n              <li class=\"list-group-item\">Email Recipient:\n                <strong>{{ certInfo.recipient.email }}</strong>\n              </li>\n              <li class=\"list-group-item\">Degree Class:\n                <strong>{{ certInfo.badge.criteria.narrative }}</strong>\n              </li>\n              <li class=\"list-group-item\">Description:\n                <strong>{{ certInfo.badge.description }}</strong>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n      <div class=\"card\">\n        <div class=\"card-header\" id=\"headingTwo\">\n          <h5 class=\"mb-0\">\n            <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseTwo\" aria-expanded=\"true\" aria-controls=\"collapseTwo\">\n              Isser Signature\n            </button>\n          </h5>\n        </div>\n        <div id=\"collapseTwo\" class=\"collapse show\" aria-labelledby=\"headingTwo\" data-parent=\"#accordion\">\n          <div class=\"card-body\">\n            <ul class=\"list-group\">\n              <li class=\"list-group-item\">Job Title: {{ certInfo.badge.signatureLines.jobTitle }}</li>\n              <li class=\"list-group-item\">Image Signature:\n                <img src=\"{{ certInfo.badge.signatureLines.image }}\" alt=\"logo ptit\" class=\"img-thumbnail\" style=\"max-width: 40%;\">\n              </li>\n              <li class=\"list-group-item\">Name: {{ certInfo.badge.signatureLines.name }}</li>\n            </ul>\n          </div>\n        </div>\n      </div>\n      <div class=\"card\">\n        <div class=\"card-header\" id=\"headingThree\">\n          <h5 class=\"mb-0\">\n            <button class=\"btn btn-link\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"false\" aria-controls=\"collapseThree\">\n              Unicert Signature\n            </button>\n          </h5>\n        </div>\n        <div id=\"collapseThree\" class=\"collapse show\" aria-labelledby=\"headingThree\" data-parent=\"#accordion\">\n          <div class=\"card-body\">\n            <ul class=\"list-group\">\n              <li class=\"list-group-item\">Merkle Root: {{ certInfo.unicertSignature.merkleRoot }}</li>\n              <li class=\"list-group-item\">Target Hash: {{ certInfo.unicertSignature.targetHash }}</li>\n              <li class=\"list-group-item\">Proof:\n                <ul>\n                  <li *ngFor=\"let proof of certInfo.unicertSignature.proof\">\n                    <span *ngIf=\"proof.left\">Left: {{ proof.left }}</span>\n                    <span *ngIf=\"proof.right\">Right: {{ proof.right }}</span>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"list-group-item\">\n                TxID:\n                <strong> {{ certInfo.unicertSignature.anchors[0].txid }} </strong>\n              </li>\n            </ul>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -38165,6 +38165,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var CertInfoComponent = /** @class */ (function () {
     function CertInfoComponent() {
+        this.certInfo = {
+            "issuedOn": "2017-07-20T09:33:47.490752+00:00",
+            "recipient": {
+                "id": "uuid:4de1a96a-3501-46ed-8f75-49612bbac257",
+                "name": "Join Son",
+                "email": "joinson@gmail.com",
+                "image": "ahihi"
+            },
+            "badge": {
+                "issuer": {
+                    "url": "http://portal.ptit.edu.vn/",
+                    "name": "PTIT HCM",
+                    "email": "ptithcm@edu.vn",
+                    "type": "Profile",
+                    "id": "uuid:f484a3b4239345329da836ad80248e71",
+                    "image": "./assets/images/logo-ptit.png"
+                },
+                "name": "Certificate of Accomplishment",
+                "criteria": {
+                    "narrative": "Good"
+                },
+                "image": "data:image/png;base64,iVBORw0KGgoAAA",
+                "id": "uuid:82a4c9f2-3588-457b-80ea-da695571b8fc",
+                "description": "Lorem ipsum dolor sit amet, mei docendi concludaturque ad, cu nec partem graece. Est aperiam consetetur cu, expetenda moderatius neglegentur ei nam, suas dolor laudem eam an.",
+                "signatureLines": {
+                    "jobTitle": "Director",
+                    "name": "Mr Doe",
+                    "image": "./assets/images/mr-wonderful.jpg"
+                }
+            },
+            "id": "uuid:3bc1a96a350146ed8f7549612bbac257",
+            "unicertSignature": {
+                "merkleRoot": "51ffe30551922cd79c6b35c8c1a8f714",
+                "targetHash": "3c0d59073cda2e1d504abe3c133b5384",
+                "proof": [{ 'left': '05ae04314577b2783b4be98211d1b72476c59e9c413cfb2afa2f0c68e0d93911' }, { 'right': '57b6b3398e8f735732d966747e082516' }, { 'right': 'd6581d542c7eaf801284f084478b5fcc' }],
+                "anchors": [{
+                        "txid": "2892fc02832bef41f098e7a2ec6dfc1f38b0f773b6ac1bd19860b3e3be73fa05",
+                        "type": "UniCert",
+                        "chain": "UniCert"
+                    }]
+            }
+        };
+        console.log(this.certInfo);
     }
     CertInfoComponent.prototype.ngOnInit = function () {
     };
